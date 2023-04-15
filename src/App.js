@@ -289,9 +289,9 @@ const DelAdmin = async(event) => {
   // 配布先アドレスの貼り付け欄、 AirDropボタンをレンダリングするメソッドを定義します。
   const renderMintUI = () => (
     <>
-    <p className="normal-text">配布するSBTのIDを入力(0,1,2・・・)</p>
+    <p className="normal-text">Please enter the ID of the SBT to distribute (0, 1, 2, ...)</p>
     <input type="text" name="mintID" id="mintID" size="10" onChange={(e) => setMintID(e.target.value)}></input><br></br><br></br>
-    <p className="normal-text">配布したい宛先のウォレットアドレスを入力</p><p className="normal-text">スプレッドシートからコピペOK</p>
+    <p className="normal-text">Enter the wallet address of the desired recipient</p><p className="normal-text">Copying and pasting from a spreadsheet is OK</p>
     <form method="post">
       <textarea name="dist_address" id="dist_address" cols="42" rows="10" onChange={(e) => setAddresses(e.target.value)} placeholder="0xabc...&#13;0xdef..."></textarea><br></br><br></br>
       <button
@@ -304,7 +304,7 @@ const DelAdmin = async(event) => {
     </form>
     <br></br><br></br><br></br><br></br>
 
-    <p className="normal-text">管理者に追加するアドレスを入力</p>
+    <p className="normal-text">input address you want to add as ADMIN</p>
     <form method="post">
       <input type="text" name="add_admin" id="add_admin" size="42" onChange={(e) => setAdminAddress(e.target.value)}></input><br></br><br></br>
       <button
@@ -317,7 +317,7 @@ const DelAdmin = async(event) => {
     </form>
     <br></br><br></br>
 
-    <p className="normal-text">管理者から削除するアドレスを入力</p>
+    <p className="normal-text">input address you want to delete from ADMIN</p>
     <form method="post">
       <input type="text" name="del_admin" id="del_admin" size="42" onChange={(e) => setAdminAddress(e.target.value)}></input><br></br><br></br>
       <button
@@ -331,8 +331,8 @@ const DelAdmin = async(event) => {
     <br></br><br></br>
     <br></br><br></br>
 
-    <p className="normal-text">アドレスが管理者であるかチェック</p>
-    <p className="normal-text">true:管理者 false:管理者でない</p>
+    <p className="normal-text">Check whether the address is ADMIN or NOT</p>
+    <p className="normal-text">true:ADMIN false:NOT</p>
     <form method="post">
       <input type="text" name="check_admin" id="check_admin" size="42" onChange={(e) => setAdminAddress(e.target.value)}></input><br></br><br></br>
       <button
@@ -340,10 +340,10 @@ const DelAdmin = async(event) => {
         className="cta-button connect-wallet-button"
         type='submit'
       >
-        チェック
+        Check
       </button>
     </form>
-    <p className="normal-text"> アドレス　{checkAddress ? checkAddress : "〇〇"}　のチェック結果は</p>
+    <p className="normal-text"> Address　{checkAddress ? checkAddress : "〇〇"}　's result is </p>
     <p className="normal-text"> {checkResult ? "true" : "false"}</p>
     </>
 
@@ -354,7 +354,7 @@ const DelAdmin = async(event) => {
       <div className="container">
         <div className="header-container">
           <p className="header gradient-text">SBT AirDrop Manager</p>
-          <p className="sub-text">【管理者用】参加を証明するSBTをAirDropします💫</p>
+          <p className="sub-text">【For ADMIN】AirDrop SBT💫</p>
           {/*条件付きレンダリング。
           // すでにウォレット接続されている場合は、
           // Mint NFT を表示する。*/}
